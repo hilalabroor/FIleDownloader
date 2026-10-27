@@ -16,10 +16,6 @@ import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.util.concurrent.CancellationException;
 
-/**
- * Worker thread untuk melakukan unduhan file melalui HTTP/HTTPS.
- * Dikerjakan oleh Anggota 2 (Network & Core Downloader).
- */
 public class DownloadWorker extends SwingWorker<DownloadResult, Void> {
 
     private final String urlText;
@@ -33,9 +29,6 @@ public class DownloadWorker extends SwingWorker<DownloadResult, Void> {
         this.destination = destination;
     }
 
-    /**
-     * Membatalkan proses unduhan secara aman.
-     */
     public void cancelDownload() {
         cancelRequested = true;
         try {
@@ -86,7 +79,7 @@ public class DownloadWorker extends SwingWorker<DownloadResult, Void> {
 
             long contentLength = connection.getContentLengthLong();
             try (InputStream input = new BufferedInputStream(connection.getInputStream());
-                 OutputStream output = new BufferedOutputStream(Files.newOutputStream(tempFile))) {
+                    OutputStream output = new BufferedOutputStream(Files.newOutputStream(tempFile))) {
                 activeInput = input;
                 byte[] buffer = new byte[8192];
                 int count;
@@ -116,7 +109,8 @@ public class DownloadWorker extends SwingWorker<DownloadResult, Void> {
                         firePropertyChange("speedText", null, speedText + etaText);
 
                         String status = contentLength > 0
-                                ? "Mengunduh " + FormatUtils.formatBytes(totalBytes) + " dari " + FormatUtils.formatBytes(contentLength)
+                                ? "Mengunduh " + FormatUtils.formatBytes(totalBytes) + " dari "
+                                        + FormatUtils.formatBytes(contentLength)
                                 : "Mengunduh " + FormatUtils.formatBytes(totalBytes);
                         firePropertyChange("statusText", null, status);
 

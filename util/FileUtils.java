@@ -5,15 +5,8 @@ import java.net.URL;
 import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
 
-/**
- * Utilitas untuk manipulasi file, path, dan ekstraksi nama file dari URL.
- * Dikerjakan oleh Anggota 4 (Model & Utilities).
- */
 public class FileUtils {
 
-    /**
-     * Mengekstrak nama file dari URL yang diberikan.
-     */
     public static String getFileNameFromURL(String urlText) {
         try {
             URL url = new URL(urlText);
@@ -35,9 +28,6 @@ public class FileUtils {
         }
     }
 
-    /**
-     * Mendapatkan lokasi folder Downloads default dari user.
-     */
     public static File getDefaultDownloadFolder() {
         File downloads = new File(System.getProperty("user.home"), "Downloads");
         if (downloads.exists()) {
@@ -46,12 +36,11 @@ public class FileUtils {
         return new File(System.getProperty("user.home"));
     }
 
-    /**
-     * Memastikan folder tujuan ada, jika belum ada maka dibuat.
-     */
     public static boolean ensureFolderExists(File folder) {
-        if (folder == null) return false;
-        if (folder.exists()) return true;
+        if (folder == null)
+            return false;
+        if (folder.exists())
+            return true;
         return folder.mkdirs();
     }
 }

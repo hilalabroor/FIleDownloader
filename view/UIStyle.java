@@ -4,10 +4,6 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
-/**
- * Pengaturan tema, warna, font, dan helper styling untuk antarmuka.
- * Dikerjakan oleh Anggota 1 (Frontend / UI Designer).
- */
 public class UIStyle {
     // Palet Warna
     public static final Color NAVY = new Color(25, 35, 60);
@@ -29,9 +25,6 @@ public class UIStyle {
     public static final Font FONT_SPEED = new Font("Segoe UI", Font.PLAIN, 12);
     public static final Font FONT_BUTTON = new Font("Segoe UI", Font.BOLD, 13);
 
-    /**
-     * Menerapkan gaya visual pada JButton.
-     */
     public static void styleButton(JButton button, Color bg, Color fg) {
         button.setFont(FONT_BUTTON);
         button.setForeground(fg);
@@ -44,22 +37,15 @@ public class UIStyle {
         button.setMargin(new Insets(10, 14, 10, 14));
     }
 
-    /**
-     * Menerapkan gaya visual pada JTextField.
-     */
     public static void styleTextField(JTextField field) {
         field.setFont(FONT_INPUT);
         field.setBorder(BorderFactory.createCompoundBorder(
                 BorderFactory.createLineBorder(BORDER_COLOR),
-                new EmptyBorder(7, 9, 7, 9)
-        ));
+                new EmptyBorder(7, 9, 7, 9)));
         field.setMaximumSize(new Dimension(Integer.MAX_VALUE, 38));
         field.setAlignmentX(Component.LEFT_ALIGNMENT);
     }
 
-    /**
-     * Membuat label judul field form.
-     */
     public static JLabel createFieldLabel(String text) {
         JLabel label = new JLabel(text);
         label.setFont(FONT_LABEL);

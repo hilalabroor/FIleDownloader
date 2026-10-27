@@ -4,10 +4,6 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
-/**
- * Tampilan utama (GUI) aplikasi downloader.
- * Dikerjakan oleh Anggota 1 (Frontend / UI Designer).
- */
 public class DownloadFrame extends JFrame {
     private final JTextField txtURL = new JTextField();
     private final JTextField txtLocation = new JTextField();
@@ -145,12 +141,35 @@ public class DownloadFrame extends JFrame {
     }
 
     // Getters untuk diakses oleh Controller
-    public JTextField getTxtURL() { return txtURL; }
-    public JTextField getTxtLocation() { return txtLocation; }
-    public JButton getBtnBrowse() { return btnBrowse; }
-    public JButton getBtnDownload() { return btnDownload; }
-    public JButton getBtnCancel() { return btnCancel; }
-    public JProgressBar getProgressBar() { return progressBar; }
-    public JLabel getLblStatus() { return lblStatus; }
-    public JLabel getLblSpeed() { return lblSpeed; }
+    public JTextField getTxtURL() {
+        return txtURL;
+    }
+
+    public JTextField getTxtLocation() {
+        return txtLocation;
+    }
+
+    public JButton getBtnBrowse() {
+        return btnBrowse;
+    }
+
+    public JButton getBtnDownload() {
+        return btnDownload;
+    }
+
+    public JButton getBtnCancel() {
+        return btnCancel;
+    }
+
+    public JProgressBar getProgressBar() {
+        return progressBar;
+    }
+
+    public JLabel getLblStatus() {
+        return lblStatus;
+    }
+
+    public JLabel getLblSpeed() {
+        return lblSpeed;
+    }
 }

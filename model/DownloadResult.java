@@ -3,10 +3,6 @@ package model;
 import java.io.File;
 import java.nio.file.Path;
 
-/**
- * Model untuk menyimpan data hasil unduhan.
- * Dikerjakan oleh Anggota 4 (Model & Utilities).
- */
 public class DownloadResult {
     private final File file;
     private final long bytes;

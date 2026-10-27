@@ -10,10 +10,6 @@ import javax.swing.*;
 import java.io.File;
 import java.net.URL;
 
-/**
- * Pengendali logika aplikasi dan penghubung antara View (GUI) dan Service (DownloadWorker).
- * Dikerjakan oleh Anggota 3 (Controller & Application Logic).
- */
 public class DownloadController {
     private final DownloadFrame frame;
     private DownloadWorker worker;
@@ -82,7 +78,8 @@ public class DownloadController {
         if (selectedFile.getName().equals("downloaded_file")) {
             String fileName = FileUtils.getFileNameFromURL(urlText);
             if (fileName.equals("downloaded_file")) {
-                frame.showError("Nama file tidak dapat dideteksi dari URL. Silakan tentukan nama file manual pada kolom lokasi.");
+                frame.showError(
+                        "Nama file tidak dapat dideteksi dari URL. Silakan tentukan nama file manual pada kolom lokasi.");
                 return;
             }
 
@@ -101,14 +98,13 @@ public class DownloadController {
         if (destination.exists()) {
             boolean overwrite = frame.showConfirm(
                     "File sudah ada di komputer Anda. Apakah ingin menggantinya?",
-                    "Konfirmasi Penggantian File"
-            );
+                    "Konfirmasi Penggantian File");
             if (!overwrite) {
                 return;
             }
         }
 
-        // Siapkan UI untuk mulai unduh
+        // UI untuk unduh
         frame.getProgressBar().setValue(0);
         frame.getProgressBar().setString("0%");
         frame.getLblStatus().setText("Menghubungkan ke server...");
